@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'fr' }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <div class="fixed">
+      <div class="wrapper">
+        <button class="totop hidden" aria-label="return to top">
+          ⇪
+        </button>
+      </div>
+    </div>
+
+    <div class="overflow">
+      {%- include header.html -%}
+
+      <main>
+        <div class="wrapper">
+          {% capture post_date %}
+            {{ page.date | date: "%-d" }}
+            {% assign m = page.date | date: "%-m" | minus: 1 %}
+            {{ site.months[m] }}
+            {{ page.date | date: "%Y" }}
+          {% endcapture %}
+          <div class="post-title">
+            {{ page.title }}
+          </div>
+
+          <span class="post-meta">
+            <span class="post-date">{{ post_date }}</span>
+            {%- for tag in page.tags -%}
+              <span class="post-tag">#{{ tag }}<span>
+            {%- endfor -%}
+          </span>
+
+          <div class="post-content">
+            {{ content }}
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+
+.totop {
+	transition: opacity 100ms;
+	opacity: 1;
+	pointer-events: auto;
+	cursor: pointer;
+	position: absolute;
+	top: 92px;
+	left: -92px;
+	height: 32px;
+	width: 32px;
+	border-radius: 4px;
+	background-color: $detail;
+	color: white;
+	text-align: center;
+}
+
+.totop.hidden {
+	opacity: 0;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 32px;
+
+	.wrapper {
+		flex-direction: column;
+	}
+
+	.posts {
+		list-style: none;
+		padding-inline-start: 0;
+
+		.post {
+			padding-top: 32px;
+			border-top: 1px solid $detail;
+		}
+
+		.post.first {
+			padding-top: 0;
+			border-top: none;
+		}
+	}
+
+	.post-title {
+		color: $title;
+		font-size: 24px;
+	}
+
+	a .post-title:hover {
+		text-decoration: underline;
+	}
+
+	.post-description {
+		padding-top: 16px;
+		color: $subtitle;
+	}
+
+	.post-meta {
+		font-weight: 300;
+		color: $subtitle;
+	}
+
+	.post-date {
+		display: inline-block;
+		padding-top: 16px;
+		padding-right: 16px;
+		margin-bottom: 32px;
+	}
+
+	.post-tag {
+		padding-left: 8px;
+	}
+
+	.post-content {
+		color: $title;
+	}
+
+	.post-content {
+		line-height: 1.5em;
+	}
+
+	h1, h2, h3 {
+		padding-top: 0.5em;
+	}
+
+	h1 {
+		font-size: 1.7em;
+	}
+
+	h2 {
+		font-size: 1.4em;
+	}
+
+	h3 {
+		font-size: 1.1em;
+	}
+
+	h1, h2, h3, p, pre, img + em, ol, ul {
+		margin-bottom: 16px;
+	}
+
+	pre {
+		line-height: 1em;
+		font-family: monospace;
+		border: 1px solid $detail;
+		padding: 8px 16px;
+		border-radius: 4px;
+
+		code {
+			padding: 0;
+			background-color: inherit;
+		}
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	code {
+		font-size: 0.8em;
+		font-family: 'Roboto Mono', monospace;
+		background-color: #F2F2F2;
+		border-radius: 2px;
+		padding: 2px 4px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	img + em {
+		font-style: normal;
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		color: $subtitle;
+		font-size: 0.8em;
+	}
+
+	sup {
+		vertical-align: super;
+		font-size: smaller;
+	}
+
+	.reversefootnote {
+		font-size: smaller;
+	}
+
+	hr {
+		border: none;
+		border-top: 1px solid $detail;
+	}
+
+	ol {
+		padding-inline-start: revert;
+		list-style: decimal;
+	}
+
+	ul {
+		padding-inline-start: revert;
+		list-style: disc;
+	}
+}

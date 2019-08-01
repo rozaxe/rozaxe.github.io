@@ -1,0 +1,68 @@
+
+nav {
+	height: 64px;
+	display: flex;
+
+	.spacer {
+		flex-grow: 1;
+		border-bottom: 1px solid $detail;
+	}
+
+	.wrapper {
+		flex-direction: line;
+
+		.pseudo {
+			display: block;
+			justify-content: stretch;
+		}
+
+		.title {
+			height: calc(100% - 12px);
+			color: $subtitle;
+			padding: 0 4px;
+		}
+
+		.border {
+			height: 12px;
+			border-bottom: 1px solid $detail;
+			box-sizing: border-box;
+		}
+
+		/* Position text on bottom box https://stackoverflow.com/questions/26160964/how-to-position-text-on-a-baseline */
+		.title::after {
+			content: "";
+			height: 100%;
+			display: inline-block;
+		}
+
+		.first {
+			font-size: 48px;
+			padding: 0 8px;
+		}
+
+		.underline {
+			.title {
+				color: $title;
+			}
+
+			.border {
+				border-color: $title;
+			}
+		}
+
+		.selectable:hover {
+			cursor: pointer;
+
+			.title {
+				color: #575757;
+			}
+			.border {
+				border-color: $subtitle;
+			}
+		}
+
+		a {
+			display: block;
+		}
+	}
+}

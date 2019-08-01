@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'fr' }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main>
+      <div class="wrapper">
+        <ul class="posts">
+          {%- for post in site.posts -%}
+            {% capture post_date %}
+              {{ post.date | date: "%-d" }}
+              {% assign m = post.date | date: "%-m" | minus: 1 %}
+              {{ site.months[m] }}
+              {{ post.date | date: "%Y" }}
+            {% endcapture %}
+            
+            <li class="post {% if forloop.index == 1 %}first{% endif %}">
+              <a href="{{ post.url | relative_url }}">
+                <div class="post-title">
+                  {{ post.title }}
+                </div>
+              </a>
+              <div class="post-description">
+                {{ post.description }}
+              </div>
+              <span class="post-meta">
+                <span class="post-date">{{ post_date }}</span>
+                {%- for tag in post.tags -%}
+                  <span class="post-tag">#{{ tag }}<span>
+                {%- endfor -%}
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
