@@ -1,4 +1,6 @@
 title: λ
+url: https://rozaxe.github.io
+author: rozaxe
 
 months:
   - janvier
@@ -15,7 +17,7 @@ months:
   - décembre
 
 description: >-
-  Cool articles on programming, design and lifestyle.
+  Cool articles on game programming, cooking and lifestyle !
 
 # Build settings
 markdown: kramdown
