@@ -6,6 +6,12 @@ nav {
 	.spacer {
 		flex-grow: 1;
 		border-bottom: 1px solid $detail;
+
+		&.xs {
+			flex-grow: 0;
+			flex-basis: 16px;
+			flex-shrink: 0;
+		}
 	}
 
 	.wrapper {
@@ -19,6 +25,7 @@ nav {
 		.title {
 			height: calc(100% - 12px);
 			color: $subtitle;
+			fill: $subtitle;
 			padding: 0 4px;
 		}
 
@@ -55,6 +62,7 @@ nav {
 
 			.title {
 				color: #575757;
+				fill: #575757;
 			}
 			.border {
 				border-color: $subtitle;
